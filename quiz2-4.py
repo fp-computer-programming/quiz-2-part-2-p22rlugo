@@ -12,14 +12,16 @@ second_list = list(second_split)
 
 # North = 1 , East = 2 , South = 3 , West = 4
 
+
 # Tables for given values
+directions_table = [1,1,1,1,1,1] # This is a terrible way to solve the problem but under a time crunch :/
 set_table = first_list,second_list
 
+# Also this doesn't account for people putting in different words
 # If logic (Be prepared for LOTS of ELIFS)
 if len(first_list) > 3 or len(second_list) > 3:
     print(str.format("Your set of directions is longer than the maximum value that you can input! (3 directions)"))
 else:
-    directions_table = [1,1,1,1,1,1] # This is a terrible way to solve the problem but under a time crunch :/
     # 1st Direction
     if first_list[0].lower() == "north":
         directions_table[0] = 1
@@ -74,6 +76,4 @@ else:
         directions_table[5] = 3
     elif second_list[2].lower() == "west":
         directions_table[5] = 4
-    else:
-        print(str.format("You did not input a direction, or gave it something else!"))
 print(str.format("In order to have the robot move"+str(set_table)+"give it this sequence"+str(directions_table)+"."))
